@@ -8,7 +8,7 @@ Official metabase docker image doesn't contain clickhouse DB driver.
 Run it directly in Docker:
 
 ```sh
-docker run --rm -it -p3000:3000 ghcr.io/arkadiuminc/metabase:v0.36.0
+docker run --rm -it -p3000:3000 ghcr.io/arkadiuminc/metabase:v0.37.3
 ```
 
 Use it in docker-compose:
@@ -31,7 +31,7 @@ services:
     environment:
       - CLICKHOUSE_ADMIN_PASSWORD=admin
   metabase:
-    image: ghcr.io/arkadiuminc/metabase:v0.36.0
+    image: ghcr.io/arkadiuminc/metabase:v0.37.3
     ports:
       - "3000:3000"
 ```

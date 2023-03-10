@@ -1,0 +1,30 @@
+version: "3.2"
+
+services:
+
+  clickhouse:
+    image: bitnami/clickhouse
+    container_name: ch
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+      - "9004:9004"
+    volumes:
+      - ch_data:/var/lib/clickhouse
+    environment:
+      - CLICKHOUSE_ADMIN_PASSWORD=admin
+
+  metabase:
+    build: .
+    ports:
+      - "3000:3000"
+
+networks:
+  ark_eye:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
+  ch_data:
+    driver: local
